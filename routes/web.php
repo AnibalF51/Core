@@ -15,7 +15,7 @@ use App\Http\Controllers\EmpresaController;
 */
 
 Route::get('/', function () {
-    return view('plantilla');
+    return view('auth/login');
 });
 
 //INICIO
@@ -24,3 +24,15 @@ Route::get('/principal', [EmpresaController::class, 'principal'])->name('princip
 Route::get('/empresa/create', [EmpresaController::class, 'create'])->name('empresa.crear');
 Route::post('/empresa/registro', [EmpresaController::class, 'store'])->name('empresa.registro'); 
 Route::get('/empresa/lista', [EmpresaController::class, 'list'])->name('empresa.lista');
+//SESIONES
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+Route::get('/', function () {return view('profile.show');})->name('profile');;
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('principal');
+    })->name('dashboard');
+});
