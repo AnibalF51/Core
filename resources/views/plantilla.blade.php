@@ -126,7 +126,37 @@
                             </ul>
                         </li>
                         <!--  FIN INVENTARIO-->
-
+<!--  INICIO BOLETAS-->
+<li class="nav-item">
+    <a href="#" class="nav-link ">
+        <i class="fas fa-fw fa-users"></i>
+        <p>
+            Boletas
+            <i class="right fas fa-angle-left"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="fas fa-fw fa-clipboard-list"></i>
+                <p>Registro de Boletas</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="fas fa-fw fa-clipboard-list"></i>
+                <p>Lista de registro</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="fas fa-fw fa-clipboard-list"></i>
+                <p>Reportes</p>
+            </a>
+        </li>
+    </ul>
+</li>
+<!--  FIN BOLETAS-->
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-power-off"></i>
