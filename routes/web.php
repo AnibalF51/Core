@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\BoletasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,8 @@ Route::get('/principal', [EmpresaController::class, 'principal'])->name('princip
 Route::get('/empresa/create', [EmpresaController::class, 'create'])->name('empresa.crear');
 Route::post('/empresa/registro', [EmpresaController::class, 'store'])->name('empresa.registro'); 
 Route::get('/empresa/lista', [EmpresaController::class, 'list'])->name('empresa.lista');
+//BOLETAS
+Route::get('/boletas/create', [BoletasController::class, 'create'])->name('boletas.crear');
 //SESIONES
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::get('/', function () {return view('profile.show');})->name('profile');;
