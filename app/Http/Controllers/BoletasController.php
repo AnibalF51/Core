@@ -35,7 +35,33 @@ class BoletasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nBoletas = new Boletas();
+
+        $nBoletas->nBoleta = $request->nBoleta;
+        $nBoletas->vBoleta = $request->vBoleta;
+        $nBoletas->fBoleta = $request->fBoleta;
+        $nBoletas->lBoleta = $request->lBoleta;
+        $nBoletas->pBoleta = $request->pBoleta;
+        $nBoletas->bBoleta = $request->bBoleta;
+        $nBoletas->nRecibo = $request->nRecibo;
+        $nBoletas->mRecibo = $request->mRecibo;
+        $nBoletas->fRecibo = $request->fRecibo;
+        $nBoletas->tRecibo = $request->tRecibo;
+        $nBoletas->nAlumno = $request->nAlumno;
+        $nBoletas->gAlumno = $request->gAlumno;
+        $nBoletas->ncAlumno = $request->ncAlumno;
+        $nBoletas->comentario = $request->comentario;
+        $nBoletas->estado = "Pendiente";
+        $nBoletas->uEdicion =  auth()->user()->name;
+        $nBoletas->CodEMpresa = 1;
+        $nBoletas->save();
+        return redirect()->route('boletas.crear');
+    }
+    public function list()
+    {
+        $boletas = Boletas::all();
+        
+        return view('boletas/list', compact('boletas'));
     }
 
     /**

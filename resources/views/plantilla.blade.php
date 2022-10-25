@@ -143,7 +143,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('boletas.lista') }}" class="nav-link">
                 <i class="fas fa-fw fa-clipboard-list"></i>
                 <p>Lista de registro</p>
             </a>
@@ -158,7 +158,7 @@
 </li>
 <!--  FIN BOLETAS-->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('logout') }}" class="nav-link">
                                 <i class="nav-icon fas fa-power-off"></i>
                                 <p>Salir</p>
                             </a>

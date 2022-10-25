@@ -7,7 +7,10 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations. 
+     * 
+     * CAMBIAR NOMBRE DE BOLETAS
+     * Conciliación de cuenta bancaria
      *
      * @return void
      */
@@ -15,6 +18,23 @@ return new class extends Migration
     {
         Schema::create('boletas', function (Blueprint $table) {
             $table->id();
+            $table->string('nBoleta');
+            $table->string('vBoleta');
+            $table->date('fBoleta');
+            $table->string('lBoleta');
+            $table->string('pBoleta');
+            $table->string('bBoleta');
+            $table->string('nRecibo');
+            $table->string('mRecibo');
+            $table->string('fRecibo');
+            $table->string('tRecibo');
+            $table->string('nAlumno');
+            $table->string('gAlumno');
+            $table->string('ncAlumno');
+            $table->string('comentario')->nullable();
+            $table->string('estado');
+            $table->string('uEdicion');
+            $table->integer('CodEmpresa');
             $table->timestamps();
         });
     }

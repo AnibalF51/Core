@@ -6,7 +6,7 @@
 <br>
 <section class="content">
     <div class="container-fluid">
-        <form action="{{route('empresa.registro')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('boletas.registro')}}" method="POST" enctype="multipart/form-data">
             @csrf
         <div class="card card-primary card-outline">
             <div class="card-header">
@@ -17,43 +17,43 @@
                 <div class="card-body">
                         <div class="row">
                             <div class="form-group col-sm-4">
-                                <label for="txtempresa">No. Boleta</label>
-                                <input type="number" id="nEmpresa" name="nEmpresa" class="form-control">
+                                <label for="nBoleta">No. Boleta</label>
+                                <input type="number" id="nBoleta" name="nBoleta" class="form-control" required>
                             </div>
                             <div class="form-group col-sm-4">
-                                <label for="txtempresa">Valor en la Boleta</label>
-                                <input type="number" id="nEmpresa" name="nEmpresa" class="form-control">
+                                <label for="vBoleta">Valor en la Boleta</label>
+                                <input type="number" id="vBoleta" name="vBoleta" class="form-control" required>
                             </div>
                             <div class="form-group col-sm-4">
-                                <label for="txtempresa">Fecha de deposito</label>
-                                <input type="date" id="nEmpresa" name="nEmpresa" class="form-control">
+                                <label for="fBoleta">Fecha de deposito</label>
+                                <input type="date" id="fBoleta" name="fBoleta" class="form-control" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-sm-6">
-                                <label for="txtempresa">Lugar donde deposito</label>
-                                <input type="number" id="nEmpresa" name="nEmpresa" class="form-control">
+                                <label for="lBoleta">Lugar donde deposito</label>
+                                <input type="text" id="lBoleta" name="lBoleta" class="form-control" required>
                             </div>
                             <div class="form-group col-sm-6"> 
-                                <label for="txtestado">Forma de pago</label>
-                                    <select name="txtestado" class="form-control" id="txtestado"
-                                        placeholder="Seleccione un estado">
-                                        <option value="Activo" selected>Deposito</option>
-                                        <option value="Inactivo">Transferencia</option>
-                                        <option value="Inactivo">Cheque</option>
-                                        <option value="Inactivo">Otros</option>
+                                <label for="pBoleta">Forma de pago</label>
+                                    <select name="pBoleta" class="form-control" id="pBoleta"
+                                        placeholder="Seleccione un estado" required>
+                                        <option value="Deposito" selected>Deposito</option>
+                                        <option value="Transferencia">Transferencia</option>
+                                        <option value="Cheque">Cheque</option>
+                                        <option value="Otros">Otros</option>
                                     </select>
                             </div>
                             
                         </div>
                         <div class="form-group col-sm-12"> 
-                            <label for="txtestado">Seleccione el banco</label>
-                                <select name="txtestado" class="form-control" id="txtestado"
+                            <label for="bBoleta">Seleccione el banco</label>
+                                <select name="bBoleta" class="form-control" id="bBoleta"
                                     placeholder="Seleccione un estado">
-                                    <option value="Activo" selected>Banrural</option>
-                                    <option value="Inactivo">Industrial</option>
-                                    <option value="Inactivo">BAM</option>
-                                    <option value="Inactivo">Bantrab</option>
+                                    <option value="Banrural" selected>Banrural</option>
+                                    <option value="Industrial">Industrial</option>
+                                    <option value="BAM">BAM</option>
+                                    <option value="Bantrab">Bantrab</option>
                                 </select>
                         </div>
                 </div>
@@ -67,67 +67,66 @@
                 <div class="card-body">
                         <div class="row">
                             <div class="form-group col-sm-4">
-                                <label for="txtempresa">No. Recibo</label>
-                                <input type="number" id="nEmpresa" name="nEmpresa" class="form-control">
+                                <label for="nRecibo">No. Recibo</label>
+                                <input type="number" id="nRecibo" name="nRecibo" class="form-control" required>
                             </div>
                             <div class="form-group col-sm-4">
-                                <label for="txtempresa">Monto en el recibo</label>
-                                <input type="number" id="nEmpresa" name="nEmpresa" class="form-control">
+                                <label for="mRecibo">Monto en el recibo</label>
+                                <input type="number" id="mRecibo" name="mRecibo" class="form-control" required>
                             </div>
                             <div class="form-group col-sm-4">
-                                <label for="txtempresa">Fecha de recepcion de boleta</label>
-                                <input type="date" id="nEmpresa" name="nEmpresa" class="form-control">
+                                <label for="fRecibo">Fecha de recepcion de boleta</label>
+                                <input type="date" id="fRecibo" name="fRecibo" class="form-control" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-sm-6">
-                                <label for="txtempresa">Tipo de pago</label>
+                                <label for="tRecibo">Tipo de pago</label>
                                 <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true"
-                                        id="seleccion">
-                                        <option selected="selected" value="Seleccione una opcion">Seleccione una opcion
+                                        id="tRecibo" name="tRecibo">
+                                        <option selected="selected" value="Mensualidad" >Mensualidad
                                         </option>
-                                            <option data-select2-id="1" name="nivel" value="Basico">Mensualidad</option>
-                                            <option data-select2-id="1" name="nivel" value="Computacion">Plataforma</option>
-                                            <option data-select2-id="1" name="nivel" value="Computacion">Administrativos</option>
-                                            <option data-select2-id="1" name="nivel" value="Computacion">Mora</option>
-                                            <option data-select2-id="1" name="nivel" value="Perito Contador">Graduacion</option>
+                                            <option value="Plataforma">Plataforma</option>
+                                            <option value="Administrativos">Administrativos</option>
+                                            <option value="Mora">Mora</option>
+                                            <option value="Graduacion">Graduacion</option>
                                     </select>
                             </div>
                            
                         </div>
                         <div class="row">
                             <div class="form-group col-sm-4">
-                                <label for="txtempresa">Nombre del alumno</label>
-                                <input type="text" id="nEmpresa" name="nEmpresa" class="form-control">
+                                <label for="nAlumno">Nombre del alumno</label>
+                                <input type="text" id="nAlumno" name="nAlumno" class="form-control" required>
                             </div>
                             <div class="form-group col-sm-4">
-                                <label for="txtempresa">Grado</label>
-                                <input type="number" id="nEmpresa" name="nEmpresa" class="form-control">
+                                <label for="gAlumno">Grado</label>
+                                <input type="number" id="gAlumno" name="gAlumno" class="form-control" max="6" min="1" required>
                             </div>
                             <div class="form-group col-sm-4">
-                                <label for="txtempresa">Nivel/Carrera</label>
+                                <label for="ncAlumno">Nivel/Carrera</label>
                                 <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true"
-                                        id="seleccion">
+                                        id="ncAlumno" name="ncAlumno">
                                         <option selected="selected" value="Seleccione una opcion">Seleccione una opcion
                                         </option>
-                                            <option data-select2-id="1" name="nivel" value="Basico">Primaria</option>
-                                            <option data-select2-id="1" name="nivel" value="Computacion">Computacion</option>
-                                            <option data-select2-id="1" name="nivel" value="Computacion">Mecanica</option>
-                                            <option data-select2-id="1" name="nivel" value="Computacion">Medicina</option>
-                                            <option data-select2-id="1" name="nivel" value="Perito Contador">Perito Contador</option>
-                                            <option data-select2-id="1" name="nivel" value="Electronica">Electronica</option>
-                                            <option data-select2-id="1" name="nivel" value="Criminologia">Criminologia</option>
-                                            <option data-select2-id="1" name="nivel" value="Secretariado">Secretariado</option>
-                                            <option data-select2-id="1" name="nivel" value="Secretariado">Juridico</option>
-                                            <option data-select2-id="1" name="nivel" value="Secretariado">Magisterio</option>
-                                            <option data-select2-id="1" name="nivel" value="Secretariado">Turismo</option>
-                                            <option data-select2-id="1" name="nivel" value="Secretariado">Ciencias y Letras</option>
+                                            <option  value="Primaria">Primaria</option>
+                                            <option  value="Computacion">Computacion</option>
+                                            <option  value="Mecanica">Mecanica</option>
+                                            <option  value="Medicina">Medicina</option>
+                                            <option  value="Perito Contador">Perito Contador</option>
+                                            <option value="Electronica">Electronica</option>
+                                            <option  value="Criminologia">Criminologia</option>
+                                            <option alue="Secretariado">Secretariado</option>
+                                            <option  value="Juridico">Juridico</option>
+                                            <option value="Magisterio">Magisterio</option>
+                                            <option value="Turismo">Turismo</option>
+                                            <option value="Ciencias y Letra">Ciencias y Letras</option>
                                     </select>
                             </div>
                         </div>
                         <div class="form-group col-sm-12">
-                            <label for="txtempresa">Comentarios</label>
-                            <textarea rows="5" class="form-control" name="observaciones" id="observaciones" placeholder="Observaciones"> </textarea>
+                            <label for="comentario">Comentarios</label>
+                            <textarea rows="5" class="form-control" name="comentario" id="comentario" placeholder="Observaciones"> </textarea>
                         </div>
                 </div>
         </div>
@@ -135,7 +134,7 @@
             <button type="submit" class="btn btn-primary swalDefaultSuccess"><i
                     class="fas fa-save"></i> Registrar</button>
             <a href="{{ route('empresa.lista') }}" class="btn btn-danger">
-                <i class="fas fa-ban"></i> Cancelar
+                <i class="fas fa-ban"></i> Cancelar 
             </a>
         </div>
         @if (session('agregar'))

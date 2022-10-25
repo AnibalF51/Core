@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\BoletasController;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use App\Http\Controllers\BoletasController;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('dashboard');
 });
 
 //INICIO
@@ -27,8 +28,10 @@ Route::post('/empresa/registro', [EmpresaController::class, 'store'])->name('emp
 Route::get('/empresa/lista', [EmpresaController::class, 'list'])->name('empresa.lista');
 //BOLETAS
 Route::get('/boletas/create', [BoletasController::class, 'create'])->name('boletas.crear');
+Route::post('/boletas/registro', [BoletasController::class, 'store'])->name('boletas.registro');
+Route::get('/boletas/lista', [BoletasController::class, 'list'])->name('boletas.lista');
 //SESIONES
-Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+Route::get('/logout', [Controller::class, 'logout'])->name('logout');
 Route::get('/', function () {return view('profile.show');})->name('profile');;
 Route::middleware([
     'auth:sanctum',

@@ -18,7 +18,7 @@ class EmpresaController extends Controller
         
         return view('Empresa/list', compact('empresas'));
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
