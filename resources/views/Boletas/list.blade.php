@@ -60,7 +60,7 @@
                                         <td>
                                             <a href="#" class="btn btn-info"><i class="fas fa-user-edit" title="Editar Datos"></i></a>
                                             <a href="#" class="btn btn-warning"><i class="fas fa-undo-alt" title="Cambiar a Revisado"></i></a>
-                                            <a href="#" class="btn btn-info"><i class="fas fa-eye" title="Ver detalles"></i></a>                                      
+                                            <a href="#" class="btn btn-info"><i class="fas fa-eye" title="Ver Detalles"></i></a>                                      
                                         </td>
                                                                                            
                                     </tr>
