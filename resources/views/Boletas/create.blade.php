@@ -13,7 +13,7 @@
                 <h3 class="card-title">Datos de la boleta</h3>
             </div>
            
-
+ 
                 <div class="card-body">
                         <div class="row">
                             <div class="form-group col-sm-4">

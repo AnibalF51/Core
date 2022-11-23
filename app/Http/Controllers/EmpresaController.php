@@ -45,7 +45,7 @@ class EmpresaController extends Controller
         $nEmpresa->nombreP = $request->nombre;
         $nEmpresa->estado = $request->txtestado;
         $nEmpresa->save();
-        return redirect()->route('empresa.crear');
+        return redirect()->route('empresa.lista');
     }
 
     /**

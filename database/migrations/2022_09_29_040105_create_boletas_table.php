@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string('gAlumno');
             $table->string('ncAlumno');
             $table->string('comentario')->nullable();
-            $table->string('estado');
+            $table->string('estado')->requiere();
             $table->string('uEdicion');
             $table->integer('CodEmpresa');
             $table->timestamps();

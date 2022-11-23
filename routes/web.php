@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\BoletasController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +18,13 @@ use App\Http\Controllers\Controller;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return route('dashboard');
 });
 
 //INICIO
 Route::get('/principal', [EmpresaController::class, 'principal'])->name('principal');
+//USUARIO
+Route::put('Usuario/update/{iden}', [UserController::class, 'update'])->name('usuario.empresa');    
 //EMPRESA
 Route::get('/empresa/create', [EmpresaController::class, 'create'])->name('empresa.crear');
 Route::post('/empresa/registro', [EmpresaController::class, 'store'])->name('empresa.registro'); 

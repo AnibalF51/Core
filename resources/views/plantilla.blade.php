@@ -45,9 +45,15 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="" class="nav-link">Acerca de</a>
                 </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <div class="nav-link">Empresa seleccionada: <b>{{ auth()->user()->nempresa }}</b></div>
+                </li>
+                
+                
             </ul>
         </nav>
         <!-- /.navbar -->
+
 
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
