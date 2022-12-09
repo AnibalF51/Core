@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Core | @yield('titulo')</title>
 
-    <!--
-    <link rel="shortcut icon" href="images/icons/logo_black.ico">
--->
+    
+    <link rel="shortcut icon" href="dist/favicon.ico">
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -23,11 +23,12 @@
 
     <!-- Ekko Lightbox -->
     <link rel="stylesheet" href="../plugins/ekko-lightbox/ekko-lightbox.css">
+
     <!-- Select2 -->
     <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
     <!-- dropify -->
-    <link rel="stylesheet" href="path-to/node_modules/dropify/dist/css/dropify.min.css">
+    <link rel="stylesheet" href="{{ asset('path-to/node_modules/dropify/dist/css/dropify.min.css') }}">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -37,7 +38,8 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                            class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="{{ route('principal') }}" class="nav-link">Inicio</a>
@@ -48,8 +50,8 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <div class="nav-link">Empresa seleccionada: <b>{{ auth()->user()->nempresa }}</b></div>
                 </li>
-                
-                
+
+
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -58,10 +60,10 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="" class="brand-link" style="margin-bottom:3px margin-top: 2px">
-                 <img src="" alt="Core Logo" width="30" height="30" class="brand-image img-rectangle "
-                    style="opacity: .8 "> <label style="opacity:.9">     .</label>
-            </a>
+                <a href=" {{ route('principal') }}" class="brand-link" style="margin-bottom:3px margin-top: 2px">
+                    <img src="{{ asset('dist/img/tt.png') }}" alt="Core Logo" width="160" height="160" class="brand-image img-rectangle "
+                        style="opacity: .8 "><label style="opacity:.9"></label>
+                </a>
 
             <!-- Sidebar -->
             <div class="sidebar">
@@ -132,37 +134,62 @@
                             </ul>
                         </li>
                         <!--  FIN INVENTARIO-->
-<!--  INICIO BOLETAS-->
-<li class="nav-item">
-    <a href="#" class="nav-link ">
-        <i class="fas fa-fw fa-users"></i>
-        <p>
-            Boletas
-            <i class="right fas fa-angle-left"></i>
-        </p>
-    </a>
-    <ul class="nav nav-treeview">
-        <li class="nav-item">
-            <a href="{{ route('boletas.crear') }}" class="nav-link">
-                <i class="fas fa-fw fa-clipboard-list"></i>
-                <p>Registro de Boletas</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ route('boletas.lista') }}" class="nav-link">
-                <i class="fas fa-fw fa-clipboard-list"></i>
-                <p>Lista de registro</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fas fa-fw fa-clipboard-list"></i>
-                <p>Reportes</p>
-            </a>
-        </li>
-    </ul>
-</li>
-<!--  FIN BOLETAS-->
+                        <!--  INICIO Conciliación-->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link ">
+                                <i class="fas fa-fw fa-users"></i>
+                                <p>
+                                    Conciliación de cuenta bancaria
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('boletas.crear') }}" class="nav-link">
+                                        <i class="fas fa-fw fa-clipboard-list"></i>
+                                        <p>Registro</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('boletas.lista') }}" class="nav-link">
+                                        <i class="fas fa-fw fa-clipboard-list"></i>
+                                        <p>Lista de registro</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('boletas.reportes') }}" class="nav-link">
+                                        <i class="fas fa-fw fa-clipboard-list"></i>
+                                        <p>Reportes</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--  FIN BOLETAS-->
+                        <!--  INICIO CUENTAS-->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link ">
+                                <i class="fas fa-fw fa-users"></i>
+                                <p>
+                                    Cuentas
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('boletas.crear') }}" class="nav-link">
+                                        <i class="fas fa-fw fa-clipboard-list"></i>
+                                        <p>Registro</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('boletas.lista') }}" class="nav-link">
+                                        <i class="fas fa-fw fa-clipboard-list"></i>
+                                        <p>Lista</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--  FIN CUENTAS-->
                         <li class="nav-item">
                             <a href="{{ route('logout') }}" class="nav-link">
                                 <i class="nav-icon fas fa-power-off"></i>
@@ -249,127 +276,127 @@
 
 
     <script>
-    $(function() {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-        });
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
 
-        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-            event.preventDefault();
-            $(this).ekkoLightbox({
-                alwaysShowClose: true
+            $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox({
+                    alwaysShowClose: true
+                });
+            });
+
+
+            $('.btn[data-filter]').on('click', function() {
+                $('.btn[data-filter]').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $(document).ready(function() {
+                $('.dropify')
             });
         });
-
-
-        $('.btn[data-filter]').on('click', function() {
-            $('.btn[data-filter]').removeClass('active');
-            $(this).addClass('active');
-        });
-
-        $(document).ready(function() {
-            $('.dropify')
-        });
-    });
     </script>
 
     <script>
-    $(function() {
-        //Initialize Select2 Elements
-        $('.select2').select2()
+        $(function() {
+            //Initialize Select2 Elements
+            $('.select2').select2()
 
-        //Initialize Select2 Elements
-        $('.select2').select2({
-            theme: 'bootstrap4'
-        })
+            //Initialize Select2 Elements
+            $('.select2').select2({
+                theme: 'bootstrap4'
+            })
 
-        //Datemask dd/mm/yyyy
-        $('#datemask').inputmask('dd/mm/yyyy', {
-            'placeholder': 'dd/mm/yyyy'
-        })
-        //Datemask2 mm/dd/yyyy
-        $('#datemask2').inputmask('mm/dd/yyyy', {
-            'placeholder': 'mm/dd/yyyy'
-        })
-        //Money Euro
-        $('[data-mask]').inputmask()
+            //Datemask dd/mm/yyyy
+            $('#datemask').inputmask('dd/mm/yyyy', {
+                'placeholder': 'dd/mm/yyyy'
+            })
+            //Datemask2 mm/dd/yyyy
+            $('#datemask2').inputmask('mm/dd/yyyy', {
+                'placeholder': 'mm/dd/yyyy'
+            })
+            //Money Euro
+            $('[data-mask]').inputmask()
 
-        //Date picker
-        $('#reservationdate').datetimepicker({
-            format: 'L'
-        });
+            //Date picker
+            $('#reservationdate').datetimepicker({
+                format: 'L'
+            });
 
-        //Date and time picker
-        $('#reservationdatetime').datetimepicker({
-            icons: {
-                time: 'far fa-clock'
-            }
-        });
+            //Date and time picker
+            $('#reservationdatetime').datetimepicker({
+                icons: {
+                    time: 'far fa-clock'
+                }
+            });
 
-        //Date range picker
-        $('#reservation').daterangepicker()
-        //Date range picker with time picker
-        $('#reservationtime').daterangepicker({
-            timePicker: true,
-            timePickerIncrement: 30,
-            locale: {
-                format: 'MM/DD/YYYY hh:mm A'
-            }
-        })
-        //Date range as a button
-        $('#daterange-btn').daterangepicker({
-                ranges: {
-                    'Today': [moment(), moment()],
-                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'This Month': [moment().startOf('month'), moment().endOf('month')],
-                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1,
-                        'month').endOf('month')]
+            //Date range picker
+            $('#reservation').daterangepicker()
+            //Date range picker with time picker
+            $('#reservationtime').daterangepicker({
+                timePicker: true,
+                timePickerIncrement: 30,
+                locale: {
+                    format: 'MM/DD/YYYY hh:mm A'
+                }
+            })
+            //Date range as a button
+            $('#daterange-btn').daterangepicker({
+                    ranges: {
+                        'Today': [moment(), moment()],
+                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                        'This Month': [moment().startOf('month'), moment().endOf('month')],
+                        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1,
+                            'month').endOf('month')]
+                    },
+                    startDate: moment().subtract(29, 'days'),
+                    endDate: moment()
                 },
-                startDate: moment().subtract(29, 'days'),
-                endDate: moment()
-            },
-            function(start, end) {
-                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format(
-                    'MMMM D, YYYY'))
-            }
-        )
+                function(start, end) {
+                    $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format(
+                        'MMMM D, YYYY'))
+                }
+            )
 
-        //Timepicker
-        $('#timepicker').datetimepicker({
-            format: 'LT'
+            //Timepicker
+            $('#timepicker').datetimepicker({
+                format: 'LT'
+            })
+
+            //Bootstrap Duallistbox
+            $('.duallistbox').bootstrapDualListbox()
+
+            //Colorpicker
+            $('.my-colorpicker1').colorpicker()
+            //color picker with addon
+            $('.my-colorpicker2').colorpicker()
+
+            $('.my-colorpicker2').on('colorpickerChange', function(event) {
+                $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+            })
+
+            $("input[data-bootstrap-switch]").each(function() {
+                $(this).bootstrapSwitch('state', $(this).prop('checked'));
+            })
+
         })
-
-        //Bootstrap Duallistbox
-        $('.duallistbox').bootstrapDualListbox()
-
-        //Colorpicker
-        $('.my-colorpicker1').colorpicker()
-        //color picker with addon
-        $('.my-colorpicker2').colorpicker()
-
-        $('.my-colorpicker2').on('colorpickerChange', function(event) {
-            $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
-        })
-
-        $("input[data-bootstrap-switch]").each(function() {
-            $(this).bootstrapSwitch('state', $(this).prop('checked'));
-        })
-
-    })
     </script>
 </body>
 

@@ -44,23 +44,28 @@
                                         }
                                         ?>
                                         <?php  
-                                        if($item->estado=="Revisado"){
+                                        if($item->estado=="Aprobado"){
                                               ?>
                                               <td>  <center><h5><span class="badge bg-success">{{$item->estado}}</span></h5></center> </td>
                                               <?php
                                         }
                                         ?>
                                         <?php  
-                                        if($item->estado=="Alerta"){
+                                        if($item->estado=="Anulado"){
                                               ?>
                                               <td>  <center><h5><span class="badge bg-danger">{{$item->estado}}</span></h5></center> </td>
                                               <?php
                                         }
                                         ?>
                                         <td>
-                                            <a href="#" class="btn btn-info"><i class="fas fa-user-edit" title="Editar Datos"></i></a>
-                                            <a href="#" class="btn btn-warning"><i class="fas fa-undo-alt" title="Cambiar a Revisado"></i></a>
-                                            <a href="#" class="btn btn-info"><i class="fas fa-eye" title="Ver Detalles"></i></a>                                      
+                                            @if ($item->estado != 'Anulado')
+                                            <a href="{{ route('boletas.anular', $item->id) }}" class="btn btn-danger"><i class="fas fa-minus-square" title="Anular Registro"></i></a>
+                                            @endif
+                                            @if ($item->estado == 'Pendiente')
+                                            <a href="{{ route('boletas.camestado', $item->id) }}" class="btn btn-warning"><i class="fas fa-undo-alt" title="Cambiar a Revisado"></i></a>
+                                            @endif
+                                            
+                                            <a href="{{ route('boletas.detalles', $item->id) }}" class="btn btn-info"><i class="fas fa-eye" title="Ver Detalles"></i></a>                                      
                                         </td>
                                                                                            
                                     </tr>

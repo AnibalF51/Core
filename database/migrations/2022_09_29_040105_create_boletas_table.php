@@ -18,13 +18,13 @@ return new class extends Migration
     {
         Schema::create('boletas', function (Blueprint $table) {
             $table->id();
-            $table->string('nBoleta');
+            $table->string('nBoleta')->unique();
             $table->string('vBoleta');
             $table->date('fBoleta');
             $table->string('lBoleta');
             $table->string('pBoleta');
             $table->string('bBoleta');
-            $table->string('nRecibo');
+            $table->string('nRecibo')->unique();
             $table->string('mRecibo');
             $table->string('fRecibo');
             $table->string('tRecibo');
@@ -38,7 +38,7 @@ return new class extends Migration
             $table->timestamps();
         });
     }
-
+ 
     /**
      * Reverse the migrations.
      *

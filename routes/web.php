@@ -18,7 +18,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return route('dashboard');
+    return route('principal');
 });
 
 //INICIO
@@ -33,6 +33,14 @@ Route::get('/empresa/lista', [EmpresaController::class, 'list'])->name('empresa.
 Route::get('/boletas/create', [BoletasController::class, 'create'])->name('boletas.crear');
 Route::post('/boletas/registro', [BoletasController::class, 'store'])->name('boletas.registro');
 Route::get('/boletas/lista', [BoletasController::class, 'list'])->name('boletas.lista');
+Route::get('/boletas/detalles/{iden}', [BoletasController::class, 'detalles'])->name('boletas.detalles');
+Route::get('/boletas/anular/{id}', [BoletasController::class, 'anular'])->name('boletas.anular');
+Route::get('/boletas/camestado/{id}', [BoletasController::class, 'camestado'])->name('boletas.camestado');
+Route::get('/boletas/reportes', [BoletasController::class, 'reportes'])->name('boletas.reportes');
+Route::post('/boletas/dia', [BoletasController::class, 'dia'])->name('boletas.reportesdia');         //REPORTES
+Route::post('/boletas/rango', [BoletasController::class, 'rango'])->name('boletas.reportesrango');         //REPORTES
+//COMPRAS
+Route::get('/boletas/create', [BoletasController::class, 'create'])->name('boletas.crear');
 //SESIONES
 Route::get('/logout', [Controller::class, 'logout'])->name('logout');
 Route::get('/', function () {return view('profile.show');})->name('profile');;
