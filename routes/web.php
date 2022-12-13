@@ -5,6 +5,7 @@ use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\BoletasController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CuentasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,9 @@ Route::post('/boletas/dia', [BoletasController::class, 'dia'])->name('boletas.re
 Route::post('/boletas/rango', [BoletasController::class, 'rango'])->name('boletas.reportesrango');         //REPORTES
 //COMPRAS
 Route::get('/boletas/create', [BoletasController::class, 'create'])->name('boletas.crear');
+//CUENTAS
+Route::get('/cuentas/create', [CuentasController::class, 'create'])->name('cuentas.crear');
+
 //SESIONES
 Route::get('/logout', [Controller::class, 'logout'])->name('logout');
 Route::get('/', function () {return view('profile.show');})->name('profile');;

@@ -176,7 +176,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('boletas.crear') }}" class="nav-link">
+                                    <a href="{{ route('cuentas.crear') }}" class="nav-link">
                                         <i class="fas fa-fw fa-clipboard-list"></i>
                                         <p>Registro</p>
                                     </a>
